@@ -22,7 +22,7 @@ df <- cbind(rbind(x_train, x_test), rbind(y_train, y_test), rbind(subj_train, su
 
 #2. Витягує лише вимірювання середнього значення та стандартного відхилення (mean and standard deviation) для кожного вимірювання. 
 
-statistics <- select(df,  matches("mean\\(\\)|std\\(\\)|Subject|Activity"))
+statistics <- df[ , grep("-mean\\(\\)|-std\\(\\)", colnames(df))]
 
 #3. Використовує описові назви діяльностей (activity) для найменування діяльностей у наборі даних. 
 
